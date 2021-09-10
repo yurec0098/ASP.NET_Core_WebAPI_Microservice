@@ -1,6 +1,6 @@
 using System;
 
-namespace MetricsManager
+namespace MetricsAgent
 {
 	public class WeatherForecast
 	{
@@ -11,5 +11,5 @@ namespace MetricsManager
 		public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 
 		public string Summary { get; set; }
-	}       
+	}
 }
