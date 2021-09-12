@@ -5,13 +5,13 @@ using Xunit;
 
 namespace MetricsManager.Tests
 {
-	public class CpuMetricsControllerUnitTests
-	{
-        private CpuMetricsController controller;
+	public class NetworkMetricsControllerUnitTests
+    {
+        private NetworkMetricsController controller;
 
-        public CpuMetricsControllerUnitTests()
+        public NetworkMetricsControllerUnitTests()
         {
-            controller = new CpuMetricsController();
+            controller = new NetworkMetricsController();
         }
 
         [Fact]

@@ -9,9 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson_2", "Lesson_2", "{77
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetricsManager", "Lesson_2\MetricsManager\MetricsManager.csproj", "{1D4668F5-3272-4B59-B0C6-1D3F4BD91564}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetricsManagerTests", "Lesson_2\MetricsManagerTests\MetricsManagerTests.csproj", "{623A5DAA-4F61-4C33-B808-DD0B1E9C3A49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetricsManager.Tests", "Lesson_2\MetricsManagerTests\MetricsManager.Tests.csproj", "{623A5DAA-4F61-4C33-B808-DD0B1E9C3A49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetricsAgent", "Lesson_2\MetricsAgent\MetricsAgent.csproj", "{B12A3E3E-E355-415C-AB0A-AEAAB3FEB221}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetricsAgent", "Lesson_2\MetricsAgent\MetricsAgent.csproj", "{B12A3E3E-E355-415C-AB0A-AEAAB3FEB221}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetricsAgent.Tests", "Lesson_2\MetricsAgent.Tests\MetricsAgent.Tests.csproj", "{0CE5F8DC-904A-43A9-B85E-699FA46BA00E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{B12A3E3E-E355-415C-AB0A-AEAAB3FEB221}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B12A3E3E-E355-415C-AB0A-AEAAB3FEB221}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B12A3E3E-E355-415C-AB0A-AEAAB3FEB221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CE5F8DC-904A-43A9-B85E-699FA46BA00E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE5F8DC-904A-43A9-B85E-699FA46BA00E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE5F8DC-904A-43A9-B85E-699FA46BA00E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE5F8DC-904A-43A9-B85E-699FA46BA00E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{1D4668F5-3272-4B59-B0C6-1D3F4BD91564} = {77B9E347-9BE6-46B0-AE8A-78953E570ACE}
 		{623A5DAA-4F61-4C33-B808-DD0B1E9C3A49} = {77B9E347-9BE6-46B0-AE8A-78953E570ACE}
 		{B12A3E3E-E355-415C-AB0A-AEAAB3FEB221} = {77B9E347-9BE6-46B0-AE8A-78953E570ACE}
+		{0CE5F8DC-904A-43A9-B85E-699FA46BA00E} = {77B9E347-9BE6-46B0-AE8A-78953E570ACE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7751B6A8-6C4C-4403-AAB7-EEEBFA5ED3E5}
