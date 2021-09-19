@@ -17,7 +17,7 @@ namespace MetricsManager.Controllers
         public RamMetricsController(ILogger<RamMetricsController> logger)
         {
             _logger = logger;
-            _logger.LogDebug(1, "NLog встроен в RamMetricsController");
+            _logger?.LogDebug(1, "NLog встроен в RamMetricsController");
         }
 
 

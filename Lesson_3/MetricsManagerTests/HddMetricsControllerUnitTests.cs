@@ -11,7 +11,7 @@ namespace MetricsManager.Tests
 
         public HddMetricsControllerUnitTests()
         {
-            controller = new HddMetricsController();
+            controller = new HddMetricsController(null);
         }
 
         [Fact]

@@ -17,7 +17,7 @@ namespace MetricsManager.Controllers
         public DotNetMetricsController(ILogger<DotNetMetricsController> logger)
         {
             _logger = logger;
-            _logger.LogDebug(1, "NLog встроен в DotNetMetricsController");
+            _logger?.LogDebug(1, "NLog встроен в DotNetMetricsController");
         }
 
 

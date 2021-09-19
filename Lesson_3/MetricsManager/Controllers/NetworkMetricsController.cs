@@ -17,7 +17,7 @@ namespace MetricsManager.Controllers
         public NetworkMetricsController(ILogger<NetworkMetricsController> logger)
         {
             _logger = logger;
-            _logger.LogDebug(1, "NLog встроен в NetworkMetricsController");
+            _logger?.LogDebug(1, "NLog встроен в NetworkMetricsController");
         }
 
 

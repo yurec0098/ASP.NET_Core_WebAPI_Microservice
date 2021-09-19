@@ -11,7 +11,7 @@ namespace MetricsManager.Tests
 
         public NetworkMetricsControllerUnitTests()
         {
-            controller = new NetworkMetricsController();
+            controller = new NetworkMetricsController(null);
         }
 
         [Fact]

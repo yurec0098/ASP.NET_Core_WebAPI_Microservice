@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31410.357
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31710.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson_1", "Lesson_1\Lesson_1\Lesson_1.csproj", "{EDEAD5FE-E645-4BCF-8C8C-B0BE041546C9}"
 EndProject
@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetricsManager.Tests", "Les
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetricsAgent", "Lesson_2\MetricsAgent\MetricsAgent.csproj", "{B12A3E3E-E355-415C-AB0A-AEAAB3FEB221}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetricsAgent.Tests", "Lesson_2\MetricsAgent.Tests\MetricsAgent.Tests.csproj", "{0CE5F8DC-904A-43A9-B85E-699FA46BA00E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetricsAgent.Tests", "Lesson_2\MetricsAgent.Tests\MetricsAgent.Tests.csproj", "{0CE5F8DC-904A-43A9-B85E-699FA46BA00E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson_3", "Lesson_3", "{AC377766-EAE9-4CFC-A0E8-DBE6CAECCE00}"
 EndProject

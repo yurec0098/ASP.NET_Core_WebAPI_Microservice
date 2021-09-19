@@ -17,7 +17,7 @@ namespace MetricsManager.Controllers
         public AgentsController(ILogger<AgentsController> logger)
         {
             _logger = logger;
-            _logger.LogDebug(1, "NLog встроен в AgentsController");
+            _logger?.LogDebug(1, "NLog встроен в AgentsController");
         }
 
 
