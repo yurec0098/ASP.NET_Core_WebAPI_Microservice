@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetricsManager", "Lesson_4\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetricsManager.Tests", "Lesson_4\MetricsManagerTests\MetricsManager.Tests.csproj", "{4FCD3EEF-8ACD-439C-A131-8BB486990B3C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetricsManager.DB", "Lesson_4\MetricsManager.DB\MetricsManager.DB.csproj", "{E97E6CA5-93AE-4FCE-B735-BC57A9B4909E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetricsAgent.DB", "Lesson_4\MetricsManager.DB\MetricsAgent.DB.csproj", "{E97E6CA5-93AE-4FCE-B735-BC57A9B4909E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

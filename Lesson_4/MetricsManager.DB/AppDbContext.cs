@@ -1,8 +1,8 @@
-﻿using MetricsManager.DB.Entity;
+﻿using MetricsAgent.DB.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace MetricsManager.DB
+namespace MetricsAgent.DB
 {
 	public sealed class AppDbContext : DbContext
 	{

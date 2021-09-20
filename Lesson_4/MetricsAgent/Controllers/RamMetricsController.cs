@@ -1,5 +1,5 @@
-﻿using MetricsManager.DB;
-using MetricsManager.DB.Entity;
+﻿using MetricsAgent.DB;
+using MetricsAgent.DB.Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 

@@ -1,8 +1,8 @@
-﻿using MetricsManager.DB.Entity;
+﻿using MetricsAgent.DB.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MetricsManager.DB
+namespace MetricsAgent.DB
 {
 	public class DbRepository<TEntity> : IDbRepository<TEntity> where TEntity : BaseEntity
 	{

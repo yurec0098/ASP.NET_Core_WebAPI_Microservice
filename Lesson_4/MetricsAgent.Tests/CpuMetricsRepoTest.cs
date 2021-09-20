@@ -1,11 +1,13 @@
-﻿using MetricsAgent.DAL;
+﻿using MetricsAgent.DB;
+using MetricsAgent.DB.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace MetricsAgent.Tests
 {
-	public class CpuMetricsRepoTest : ICpuMetricsRepository
+	public class CpuMetricsRepoTest : IDbRepository<CpuMetric>
 	{
 		private List<CpuMetric> _repo =new List<CpuMetric>();
 		private Random _random = new Random();
@@ -13,46 +15,39 @@ namespace MetricsAgent.Tests
 		public CpuMetricsRepoTest()
 		{
 			for (int i = 1; i <= 100; i++)
-				_repo.Add(new CpuMetric() { Id = i, Value = _random.Next(100), Time = DateTime.Now.AddSeconds(i) });
+				_repo.Add(new CpuMetric() { Id = i, Value = _random.Next(100), Time = DateTime.Now.AddSeconds(i).Ticks });
 		}
 
-		public int Create(CpuMetric item)
+
+		public Task AddAsync(CpuMetric entity)
 		{
 			var newId = _repo.Max(x => x.Id);
-			_repo.Add(new CpuMetric() { Id = ++newId, Value = item.Value, Time = item.Time });
-			return newId;
+			return new Task(() => _repo.Add(new CpuMetric() { Id = ++newId, Value = entity.Value, Time = entity.Time }));
 		}
 
-		public void Delete(int id)
+		public Task DeleteAsync(CpuMetric entity)
 		{
-			if(_repo.FirstOrDefault(x => x.Id == id) is CpuMetric metric)
-				_repo.Remove(metric);
+			return new Task(() => {
+				if (_repo.FirstOrDefault(x => x.Id == entity.Id) is CpuMetric metric)
+					_repo.Remove(metric);
+			});
 		}
 
-		public IList<CpuMetric> GetAll()
+		public Task UpdateAsync(CpuMetric entity)
 		{
-			return _repo;
-		}
-
-		public CpuMetric GetById(int id)
-		{
-			if (_repo.FirstOrDefault(x => x.Id == id) is CpuMetric metric)
-				return metric;
-			return null;
-		}
-
-		public IList<CpuMetric> GetByTimePeriod(DateTime from, DateTime to)
-		{
-			return _repo.Where(x => x.Time <= from && x.Time >= to).ToList();
-		}
-
-		public void Update(CpuMetric item)
-		{
-			if (_repo.FirstOrDefault(x => x.Id == item.Id) is CpuMetric metric)
+			return new Task(() =>
 			{
-				metric.Value = item.Value;
-				metric.Time = item.Time;
-			}
+				if (_repo.FirstOrDefault(x => x.Id == entity.Id) is CpuMetric metric)
+				{
+					metric.Value = entity.Value;
+					metric.Time = entity.Time;
+				}
+			});
+		}
+
+		IQueryable<CpuMetric> IDbRepository<CpuMetric>.GetAll()
+		{
+			return _repo.AsQueryable();
 		}
 	}
 }

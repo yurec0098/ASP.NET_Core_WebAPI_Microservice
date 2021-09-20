@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MetricsManager.DB.Entity
+namespace MetricsAgent.DB.Entity
 {
 	public class NetworkMetric : BaseEntity
 	{

@@ -1,6 +1,6 @@
 using MetricsAgent.Controllers;
-using MetricsManager.DB;
-using MetricsManager.DB.Entity;
+using MetricsAgent.DB;
+using MetricsAgent.DB.Entity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;

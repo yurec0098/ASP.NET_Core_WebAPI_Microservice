@@ -1,5 +1,5 @@
 ﻿using MetricsAgent.Controllers;
-using MetricsAgent.Responses;
+using MetricsAgent.DB.Entity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using Xunit;
@@ -26,7 +26,7 @@ namespace MetricsAgent.Tests
             var toTime = time.AddSeconds(50);
 
             //Act
-            var result = controller.GetMetrics(fromTime, toTime);
+            var result = controller.GetByTimePeriod(fromTime, toTime);
 
             // Assert
             _ = Assert.IsAssignableFrom<IActionResult>(result);
@@ -35,10 +35,10 @@ namespace MetricsAgent.Tests
         [Fact]
         public void Create_ReturnsOk()
         {
-			var request = new CpuMetricCreateRequest() { Time = DateTime.Now, Value = _random.Next() };
+			var request = new CpuMetric() { Time = DateTime.Now.Ticks, Value = _random.Next() };
 
 			//Act
-			var result = controller.Create(request);
+			var result = controller.Add(request);
 
             // Assert
             _ = Assert.IsAssignableFrom<IActionResult>(result);
