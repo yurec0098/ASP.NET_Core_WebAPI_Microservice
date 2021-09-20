@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using MetricsManager.DB.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace MetricsManager.DB

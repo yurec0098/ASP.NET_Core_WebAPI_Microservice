@@ -48,7 +48,7 @@ namespace MetricsAgent
 			var tables = new string[] { "cpumetrics", "dotnetmetrics", "hddmetrics", "networkmetrics", "rammetrics", };
 
 		//	const string connectionString = "Data Source=metrics.db;Version=3;Pooling=true;Max Pool Size=100;";
-			string ConnectionString = Configuration["ConnectionString:MyConnection"];
+			string ConnectionString = Configuration.GetConnectionString("MyConnection");
 			var connection = new SQLiteConnection(ConnectionString);
 			connection.Open();
 
