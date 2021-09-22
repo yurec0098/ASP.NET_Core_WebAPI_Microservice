@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace MetricsAgent.Jobs
 {
+#pragma warning disable CA1416 // Проверка совместимости платформы
 	public class MetricsJob : IJob
 	{
 		private readonly IDbRepository<CpuMetric> _cpuRepo;
@@ -16,7 +17,7 @@ namespace MetricsAgent.Jobs
 		private readonly IDbRepository<DotNetMetric> _dotnetRepo;
 		private readonly IDbRepository<NetworkMetric> _networkRepo;
 
-		// счетчик для метрики CPU
+		// счетчик метрик
 		private PerformanceCounter _cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
 		private PerformanceCounter _ramCounter = new PerformanceCounter("Memory", "Available MBytes");
 		private PerformanceCounter _hddCounter = new PerformanceCounter("PhysicalDisk", "% Disk Time", "_Total");
@@ -63,4 +64,5 @@ namespace MetricsAgent.Jobs
 			return Task.CompletedTask;
 		}
 	}
+#pragma warning restore CA1416 // Проверка совместимости платформы
 }
