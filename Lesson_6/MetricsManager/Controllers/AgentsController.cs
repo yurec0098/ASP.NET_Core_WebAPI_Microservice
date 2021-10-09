@@ -27,20 +27,20 @@ namespace MetricsManager.Controllers
 
 
         [HttpPost("register")]
-        public IActionResult RegisterAgent([FromBody] AgentInfo agentInfo)
+        public async Task<IActionResult> RegisterAgent([FromBody] AgentInfo agentInfo)
         {
-            var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress;
-            var remotePort = Request.HttpContext.Connection.RemotePort;
+            //var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress;
+            //var remotePort = Request.HttpContext.Connection.RemotePort;
 
             if(_repository.GetAll().FirstOrDefault(x=> x.AgentAddress == agentInfo.AgentAddress) is AgentInfo agent)
 			{
                 agent.IsEnabled = true;
-                _repository.SaveChangesAsync();
+                await _repository.SaveChangesAsync();
 			}
 			else
 			{
-                _repository.AddAsync(agentInfo);
-			}
+                await _repository.AddAsync(agentInfo);
+            }
 
             return Ok();
         }
@@ -58,9 +58,9 @@ namespace MetricsManager.Controllers
         //}
 
         [HttpGet("agents")]
-        public Task<List<AgentInfo>> GetAgents()
+        public async Task<List<AgentInfo>> GetAgents()
         {
-            return _repository.GetAll().ToListAsync();
+            return await _repository.GetAll().ToListAsync();
         }
     }
 }

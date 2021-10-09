@@ -54,7 +54,7 @@ namespace MetricsManager
 			services.AddSingleton<ISchedulerFactory, StdSchedulerFactory>();
 			services.AddSingleton<AgentsJob>();
 			services.AddSingleton(new JobSchedule(typeof(AgentsJob),
-					   Configuration.GetValue("CronExpression", "0/600 * * * * ?")));
+					   Configuration.GetValue("CronExpression", "5/0 * * * * ?")));
 			services.AddHostedService<QuartzHostedService>();
 
 			services.AddSwaggerGen(c =>

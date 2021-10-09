@@ -13,12 +13,7 @@ namespace MetricsManager.DB
 		public AppDbContext(DbContextOptions<AppDbContext> options)
 			: base(options)
 		{
-			Database.EnsureDeleted();
 			Database.EnsureCreated();
-
-			Agents.Add(new AgentInfo() { AgentAddress = new Uri("http://localhost:5000") });
-			Agents.Add(new AgentInfo() { AgentAddress = new Uri("https://localhost:5001") });
-			SaveChangesAsync();
 		}
 
 		public DbSet<AgentInfo> Agents { get; set; }

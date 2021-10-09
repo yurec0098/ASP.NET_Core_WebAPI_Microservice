@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 namespace MetricsAgent
@@ -31,6 +32,41 @@ namespace MetricsAgent
 		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;
+			RegisterToManager();
+		}
+
+		private void RegisterToManager()
+		{
+			var ManagerHost = Configuration.GetValue<Uri>("ManagerHost");
+			var myHost = Configuration.GetValue<string>("Urls").Split(';').FirstOrDefault();
+
+			var request = new HttpRequestMessage(HttpMethod.Post, $"{ManagerHost}api/Agents/register");
+			request.Content = JsonContent.Create(new { agentAddress = myHost, agentName = Environment.UserName, isEnabled = true });
+			request.Headers.Add("Accept", "application/vnd.github.v3+json");
+
+			try
+			{
+				//Console.WriteLine($"Try connetc to {ManagerHost}");
+
+				var client = new HttpClient();
+				client.Timeout = new TimeSpan(0, 0, 15);
+				var response = client.Send(request);
+				if (response.IsSuccessStatusCode)
+				{
+					//Console.WriteLine($"Connetc to {ManagerHost} Is Success");
+				}
+				else
+				{
+					// ошибка при получении ответа
+					//Console.WriteLine($"Connetc to {ManagerHost} Is Failed");
+				}
+			}
+			catch(Exception ex)
+			{
+				Console.ForegroundColor = ConsoleColor.Red;
+				Console.WriteLine(ex.InnerException.Message);
+				Console.ResetColor();
+			}
 		}
 
 		public IConfiguration Configuration { get; }
