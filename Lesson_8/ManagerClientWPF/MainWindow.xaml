@@ -1,0 +1,55 @@
+﻿<Window x:Class="ManagerClientWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ManagerClientWPF"
+        xmlns:my="clr-namespace:ManagerClientWPF.Controls"
+		mc:Ignorable="d"
+        Title="Metrics Manager Client" Height="450" Width="900" MinHeight="450" MinWidth="900">
+
+	<Grid Margin="0,0,0,0">
+
+		<StackPanel x:Name="connectStack" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left"
+					IsEnabled="{Binding ElementName=connectButton, Path=IsEnabled, UpdateSourceTrigger=PropertyChanged}" >
+			<TextBox Text="{Binding IP, UpdateSourceTrigger=PropertyChanged}" Width="150" ToolTip="Server IP" Margin="5" />
+			<TextBox Text="{Binding Port, UpdateSourceTrigger=PropertyChanged}" Width="50" ToolTip="Server Port" Margin="5" />
+		</StackPanel>
+
+		<Button x:Name="connectButton" Content="Получить список агентов" Click="Button_Click_GetAgents"
+				Margin="5,28,0,0" Height="40" VerticalAlignment="Top" HorizontalAlignment="Left" Width="210" />
+
+		<ListBox x:Name="Agents_ListBox" Margin="5,73,0,10" HorizontalAlignment="Left" Width="210" SelectionChanged="Agents_ListBox_SelectionChanged" >
+			<ListBox.ItemTemplate>
+				<HierarchicalDataTemplate>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock>
+							<Run Text="{Binding AgentName, UpdateSourceTrigger=PropertyChanged}"/>
+							<Run Text=" ("/>
+							<Run Text="{Binding AgentAddress, UpdateSourceTrigger=PropertyChanged}"/>
+							<Run Text=")"/>
+						</TextBlock>
+					</StackPanel>
+				</HierarchicalDataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+
+		<TabControl x:Name="tabMetrics" Margin="225,10,10,10" SelectionChanged="TabControl_SelectionChanged">
+			<TabItem Header="CPU" Tag="cpu" IsSelected="True">
+				<my:MaterialCards HeaderName="Загрузка процессора" />
+			</TabItem>
+			<TabItem Header="HDD" Tag="hdd">
+				<my:MaterialCards HeaderName="Загрузка дисков" />
+			</TabItem>
+			<TabItem Header="RAM" Tag="ram">
+				<my:MaterialCards HeaderName="Загрузка ОЗУ" />
+			</TabItem>
+			<TabItem Header="DotNet" Tag="dotnet">
+				<my:MaterialCards HeaderName="Загрузка DotNet" />
+			</TabItem>
+			<TabItem Header="NETWORK" Tag="network">
+				<my:MaterialCards HeaderName="Загрузка сети" />
+			</TabItem>
+		</TabControl>
+	</Grid>
+</Window>

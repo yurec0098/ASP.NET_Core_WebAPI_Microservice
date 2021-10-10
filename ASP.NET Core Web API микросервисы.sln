@@ -71,7 +71,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetricsManager.DB", "Lesson
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetricsManager.Client", "Lesson_6\MetricsManager.Client\MetricsManager.Client.csproj", "{D66335D9-A396-4C02-A5F5-437508DFBDA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetricsManager.Services", "Lesson_6\MetricsManager.Services\MetricsManager.Services.csproj", "{7A183B5B-4CC1-4F01-8BA8-F6A93E41D100}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetricsManager.Services", "Lesson_6\MetricsManager.Services\MetricsManager.Services.csproj", "{7A183B5B-4CC1-4F01-8BA8-F6A93E41D100}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson_8", "Lesson_8", "{14E15024-22B4-4714-B63B-14A5A2B0682E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerClientWPF", "Lesson_8\ManagerClientWPF\ManagerClientWPF.csproj", "{460C0848-9FB9-47F8-ACBD-CE86C60F4817}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -195,6 +199,10 @@ Global
 		{7A183B5B-4CC1-4F01-8BA8-F6A93E41D100}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A183B5B-4CC1-4F01-8BA8-F6A93E41D100}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A183B5B-4CC1-4F01-8BA8-F6A93E41D100}.Release|Any CPU.Build.0 = Release|Any CPU
+		{460C0848-9FB9-47F8-ACBD-CE86C60F4817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{460C0848-9FB9-47F8-ACBD-CE86C60F4817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{460C0848-9FB9-47F8-ACBD-CE86C60F4817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{460C0848-9FB9-47F8-ACBD-CE86C60F4817}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -229,6 +237,7 @@ Global
 		{A7F9EA32-7914-4F23-ADB9-1DD4682D6DBA} = {C034CF31-CD5C-4A74-B5CB-92E0FA9512C0}
 		{D66335D9-A396-4C02-A5F5-437508DFBDA4} = {C034CF31-CD5C-4A74-B5CB-92E0FA9512C0}
 		{7A183B5B-4CC1-4F01-8BA8-F6A93E41D100} = {C034CF31-CD5C-4A74-B5CB-92E0FA9512C0}
+		{460C0848-9FB9-47F8-ACBD-CE86C60F4817} = {14E15024-22B4-4714-B63B-14A5A2B0682E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7751B6A8-6C4C-4403-AAB7-EEEBFA5ED3E5}
